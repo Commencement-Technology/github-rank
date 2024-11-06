@@ -26,10 +26,17 @@
     "prettier": "prettier . --write",
     "type": "tsc --noEmit --incremental",
     "format": "yarn run prettier && yarn run lint && yarn type",
-    "bootstrap": "yarn install && yarn run format"
+    "bootstrap": "yarn install && yarn run format",
+    "script:github:users": "tsx scripts/github:users.ts",
+    "script:github:repositories": "tsx scripts/github:repositories.ts",
+    "script:all": "yarn script:github:users && yarn script:github:repositories"
   },
   "dependencies": {
+    "@octokit/request": "9.1.3",
+    "@t3-oss/env-core": "0.11.1",
+    "@t3-oss/env-nextjs": "0.11.1",
     "clsx": "2.1.1",
+    "dotenv": "16.4.5",
     "framer-motion": "11.11.11",
     "next": "15.0.2",
     "react": "18.3.1",
@@ -39,7 +46,9 @@
     "react-typed": "2.0.12",
     "swiper": "11.1.14",
     "tailwind-merge": "2.5.4",
-    "tailwind-scrollbar": "3.1.0"
+    "tailwind-scrollbar": "3.1.0",
+    "zod": "3.23.8",
+    "zod-validation-error": "3.4.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
@@ -56,6 +65,7 @@
     "prettier-plugin-tailwindcss": "0.6.8",
     "prettier-plugin-xml": "0.1.0",
     "tailwindcss": "3.4.14",
+    "tsx": "4.19.2",
     "typescript": "5.6.3"
   },
   "packageManager": "yarn@4.5.1"
